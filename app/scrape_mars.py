@@ -1,5 +1,6 @@
 # Dependencies
 import pandas as pd
+import datetime
 from bs4 import BeautifulSoup
 import requests
 from selenium import webdriver
@@ -88,13 +89,15 @@ def scrapeData():
         images.append({'title':title, 'img_url': imageUrl})
         
     #all Data
+    now = datetime.datetime.now()
     dataSet = {
         'Latest Title': latest_title,
         'Latest Teaser': latest_teaser,
         'Featured Image': image_url,
         'Weather': weather,
         'Facts': factsDF,
-        'Hemispheres': images
+        'Hemispheres': images,
+        'scrapedOn': now
     }
 
     return dataSet;
