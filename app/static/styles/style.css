@@ -1,0 +1,37 @@
+/* CUSTOM STYLES */
+img{
+	max-width: 100%;
+	height: auto;
+}
+header {
+	background-image: url('../images/mission_to_mars.jpg');
+	background-size: 100% 100%;
+	background-position: center;
+	padding-top: 200px; padding-bottom: 200px;
+}
+header h1{
+	color: #eee;
+	text-transform: uppercase;
+	text-align: center;
+}
+header a.btn-default{
+	background-color: transparent;
+	border: 1px solid #fff;
+	display: block;
+	max-width: 150px;
+	margin: 0 auto 0;
+	color: #fff;
+}
+header a.btn-default:hover{
+	color: #333;
+}
+
+main{
+	background-color: #ccc;
+	padding-bottom: 100px;
+}
+main .alert{
+	text-align: center;
+	color: #333;
+
+}

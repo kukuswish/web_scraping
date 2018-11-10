@@ -1,5 +1,6 @@
 # Dependencies
 import pandas as pd
+import json
 import datetime
 from bs4 import BeautifulSoup
 import requests
@@ -7,7 +8,6 @@ from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
-from splinter import Browser
 
 
 def scrapeData():
@@ -90,15 +90,16 @@ def scrapeData():
         
     #all Data
     now = datetime.datetime.now()
+    records = factsDF.to_json()
     dataSet = {
-        'Latest Title': latest_title,
-        'Latest Teaser': latest_teaser,
-        'Featured Image': image_url,
-        'Weather': weather,
-        'Facts': factsDF,
-        'Hemispheres': images,
+        'latestTitle': latest_title,
+        'latestTeaser': latest_teaser,
+        'featuredImage': image_url,
+        'weather': weather,
+        'facts': records,
+        'hemispheres': images,
         'scrapedOn': now
     }
-
+    browser.close()
     return dataSet;
 

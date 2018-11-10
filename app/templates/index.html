@@ -7,17 +7,57 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Mars Data</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/style.css') }}">
 </head>
 
 <body>
     <header class="index_header">
         <div class="container">
             <div class="row">
-                <h1>Mars Info</h1>
+                <h1>Mission To Mars</h1>
+                <a class="btn btn-default" href="/scrape" role="button">Scrape Data</a>
             </div>
         </div>
     </header>
-
+    <main>
+        <div class="container">
+            <div class="row">
+                <div class="topAlertclearfix">
+                    <div class="col-md-12 ">
+                        <div class="alert alert-info" role="alert">
+                            Last scraped on {{data['scrapedOn']}}
+                        </div>
+                    </div>
+                </div>
+                <div class="content">
+                    <section class="clearfix">
+                        <div class="col-md-12">
+                            <div class="news">
+                                <h3>Latest Mars News</h3>
+                                <h4>{{data['latestTitle']}}</h4>
+                                <p>{{data['latestTeaser']}}</p>
+                            </div>
+                        </div>
+                    </section>
+                    <section class="clearfix">
+                        <div class="col-md-9">
+                            <div class="featuredImage">
+                                <h3>Featured Mars Image</h3>
+                                <img src="{{data['featuredImage']}}" title="Featured Image" />
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="marsFacts">
+                                {% for a in ff %}
+                                 {{ a }}
+                                {% endfor %}
+                            </div>
+                        </div>
+                    </section>
+                </div>
+            </div>
+        </div>
+    </main>
 </body>
 
 </html>
