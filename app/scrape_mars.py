@@ -65,6 +65,12 @@ def scrapeData():
     factsDF=pd.DataFrame(factsDF[0])
 
     factsDF[0] = factsDF[0].map(lambda x: x.rstrip(':'))
+    d = []
+    for x,y in factsDF.iterrows():
+        d.append({
+            'desc': y[0],
+            'val': y[1]
+        })
 
     #hemispheres
     hmUrl = 'https://astrogeology.usgs.gov/search/results?q=hemisphere+enhanced&k1=target&v1=Mars'
@@ -90,13 +96,12 @@ def scrapeData():
         
     #all Data
     now = datetime.datetime.now()
-    records = factsDF.to_json()
     dataSet = {
         'latestTitle': latest_title,
         'latestTeaser': latest_teaser,
         'featuredImage': image_url,
         'weather': weather,
-        'facts': records,
+        'facts': d,
         'hemispheres': images,
         'scrapedOn': now
     }

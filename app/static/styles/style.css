@@ -1,7 +1,11 @@
 /* CUSTOM STYLES */
+p{
+	font-size: 16px;
+}
 img{
 	max-width: 100%;
 	height: auto;
+	width: 100%;
 }
 header {
 	background-image: url('../images/mission_to_mars.jpg');
@@ -33,5 +37,61 @@ main{
 main .alert{
 	text-align: center;
 	color: #333;
+}
+.table-bordered{
+	border-color: #666;
+}
+.news h3{
+	font-weight: 600;
+	font-size: 36px;
+}
 
+.news h4{
+	font-weight: 600;
+	font-size: 24px;
+}
+
+.featuredImage h3{
+	font-weight: 600;
+	font-size: 36px;
+}
+
+.marsWeather{
+	padding: 10px 5px;
+	border: 1px solid #666;
+	border-radius: 3px;
+}
+.marsWeather h4, .marsFacts h4{
+	font-size: 20px;
+	font-weight: 600;
+	margin-top: 0px;
+}
+.marsWeather p{
+	font-size: 12px;
+}
+
+.marsFacts{
+	margin-top: 20px;
+}
+
+.marsHem{
+	margin-top: 30px;
+}
+
+.marsHem h3{
+	font-weight: 600;
+	text-align: center;
+	font-size: 36px;
+	margin-bottom: 30px;
+}
+
+.hemItem{
+	border: 1px solid #666;
+	padding: 5px;
+	border-radius: 3px;
+	margin-bottom: 20px;
+}
+.hemItem h5{
+	font-weight: 600;
+	font-size: 20px;
 }

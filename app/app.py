@@ -15,10 +15,8 @@ mongo = PyMongo(app)
 def index():
     info = list(mongo.db.marsInfo.find())
     ds=info[-1]
-    fc=ds['facts']
-    print(fc)
 
-    return render_template("index.html", data=ds, ff=fc)
+    return render_template("index.html", data=ds)
 
 
 @app.route("/scrape")
